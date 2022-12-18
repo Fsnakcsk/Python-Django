@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+
+        {% if Error.Error == "pwdError" %}
+            <script>alert('비밀번호 틀렸습니다.');</script>
+        {% endif %}
+
+        {% if Error.Error == "idError" %}
+            <script>alert('비밀번호 틀렸습니다.');</script>
+        {% endif %}
+
+</head>
+<body>
+    <h1>회원정보</h1>
+    <hr>
+    <form method="post" action="logout">
+        {% csrf_token %}
+        <table border="1">
+            <tr>
+                <td align="center">회원번호</td>
+                <td align="center">{{id_info.user_id}}</td>
+            </tr>
+            <tr>
+                <td align="center">니넥임</td>
+                <td align="center">{{id_info.user_name}}</td>
+            </tr>
+            <tr>
+                <td align="center">비밀번호</td>
+                <td align="center">{{id_info.user_pass}}</td>
+            </tr>
+            <tr>
+                <td align="center">전화번호</td>
+                <td align="center">{{id_info.tel}}</td>
+            </tr>
+            <tr>
+                <td align="center">이메일</td>
+                <td align="center">{{id_info.email}}</td>
+            </tr>
+            <tr>
+                <td colspan="2" align="center"><input type="submit" value="로그아웃"></td>
+            </tr>
+        </table>
+    </form>
+</body>
+</html>

@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+    <h2>주 소 록</h2>
+<!--{'items':items, 'count':len(items)}-->
+    <hr>
+<!--    현재 등록된 주소록 수 : {{count}}-->
+    <a href="/">Home</a><br>
+    <a href="write">주소록 추가</a>
+<!--    <a href="">Home</a>-->
+    <table border="1">
+        <tr>
+            <th>번호</th>
+            <th>이름</th>
+            <th>전화</th>
+            <th>이메일</th>
+            <th>주소</th>
+        </tr>
+        <tr>
+            {% for row in items %}
+            <td>{{row.idx}}</td>
+            <td><a href="detail?idx={{row.idx}}">{{row.name}}</a></td>
+            <td>{{row.tel}}</td>
+            <td>{{row.email}}</td>
+            <td>{{row.address}}</td>
+        </tr>
+        {% endfor %}
+    </table>
+
+</body>
+</html>
